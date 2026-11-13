@@ -472,7 +472,7 @@
         }
       ],
       "position": [282, 0, -1000],
-      "rotation": [0, 180, 0],
+      "rotation": [0, 3.14159, 0],
       "placementRelTo": "building",
       "properties": {
         "mass":  0,
