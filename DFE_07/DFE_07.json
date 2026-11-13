@@ -468,7 +468,7 @@
       "representations": [
         {
           "file": "curved_conveyor.glb",
-          "unit": 0.001
+          "unit": 0.1
         }
       ],
       "position": [870, 0, 0],
