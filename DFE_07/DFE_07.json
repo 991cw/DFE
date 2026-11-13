@@ -24,6 +24,7 @@
     "PP.Gripper",
     "PP.Finger1",
     "PP.Finger2",
+    "B2",
     "Grid",
     "Box"
   ],
@@ -459,6 +460,25 @@
          "friction":  0.0,
          "MotionType":  "ANIMATED",
          "isTrigger":  true
+      }
+    },
+    {
+      "id":  "B2",
+      "type": "https://w3id.org/ontoeng/factory#Conveyor",
+      "representations": [
+        {
+          "file": "https://991cw.github.io/DFE/models/curved_conveyor.glb",
+          "unit": 1
+        }
+      ],
+      "position": [870, 0, 0],
+      "rotation": [0, 0, 0],
+      "placementRelTo": "building",
+      "properties": {
+        "mass":  0,
+          "restitution":  0.3,
+         "friction":  0.0,
+         "MotionType":  "ANIMATED"
       }
     },
     {
