@@ -1,6 +1,6 @@
 {
   "context":  {
-     "UnitOfMeasureScale":  0.0001,
+     "UnitOfMeasureScale":  0.01,
     "Zup":  false,
      "RepoPath":  "https://difactory.github.io/repository/models/PickPlaceCell/"
   },
