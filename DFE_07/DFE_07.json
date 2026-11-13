@@ -468,7 +468,7 @@
       "representations": [
         {
           "file": "curved_conveyor.glb",
-          "unit": 0.27
+          "unit": 0.26
         }
       ],
       "position": [282, 0, -1000],
@@ -479,6 +479,32 @@
           "restitution":  0.3,
          "friction":  0.0,
          "MotionType":  "ANIMATED"
+      },
+      "statechart": {
+           "id":  "B2_SC",
+           "initial":  "idle",
+           "states":  {
+               "idle":  {
+                   "on":  {
+                       "B2start":  "running"       
+            },
+                   "entry":  {
+                       "action":  "surfaceVelocity",
+                       "target":  "B2",
+                       "velocity":  [0, 0, 0]       
+            }     
+          },
+               "running":  {
+                   "on":  {
+                       "B2stop":  "idle"       
+            },
+                   "entry":  {
+                       "action":  "surfaceVelocity",
+                       "target":  "B2",
+                       "velocity":  [0, 0, 30]       
+            }     
+          }   
+        } 
       }
     },
     {
