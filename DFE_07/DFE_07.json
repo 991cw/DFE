@@ -468,10 +468,10 @@
       "representations": [
         {
           "file": "curved_conveyor.glb",
-          "unit": 0.1
+          "unit": 0.26
         }
       ],
-      "position": [870, 0, 0],
+      "position": [0, 0, 1000],
       "rotation": [0, 0, 0],
       "placementRelTo": "building",
       "properties": {
