@@ -467,7 +467,7 @@
       "type": "https://w3id.org/ontoeng/factory#Conveyor",
       "representations": [
         {
-          "file": "https://991cw.github.io/DFE/models/curved_conveyor.glb",
+          "file": "curved_conveyor.glb",
           "unit": 1
         }
       ],
