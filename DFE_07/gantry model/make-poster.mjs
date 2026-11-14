@@ -1,0 +1,4 @@
+﻿import { writeFileSync } from 'node:fs';
+import { launchBrowser, serveLocalTarget, WEBGL_ARGS } from './.agents/skills/design-kit/scripts/lib-browser.mjs';
+const {url,server}=await serveLocalTarget('index.html');const browser=await launchBrowser({headless:true,args:WEBGL_ARGS});
+try{const page=await browser.newPage({viewport:{width:1280,height:800}});await page.goto(url);await page.evaluate(()=>window.__1design.ready);for(const [name,w,h]of [['desktop',1280,800],['portrait',390,844]]){await page.setViewportSize({width:w,height:h});const png=await page.evaluate(async()=>{const a=window.__1design.scene3d;a.setCaptureMode(true);a.setView('hero');a.fit();await window.__seek(0);return a.exportPNG({minWidth:1280})});writeFileSync(`assets/gantry-poster-${name}.png`,Buffer.from(png.split(',')[1],'base64'))}console.log('Saved local rendered loading posters.')}finally{await browser.close();server.close()}

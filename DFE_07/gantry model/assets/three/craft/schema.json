@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "bundleId": "1design-craft",
+  "bundleVersion": "1.0.0",
+  "status": "candidate — round22 §3/§5/§6 first slice: rigid + covered-rigid humanoid, named poses idle/hold/look/reach/sit, contact + loop evidence",
+  "canonicalFrame": "right-handed metres, +Y up, +Z character-forward, character-left +X",
+  "adapters": {
+    "three": "assets/three/craft.js + craft-motion.js — this kit",
+    "bpy": "host-side binding — deferred (round22 §10; see references/3d/craft-contract.md §deferred)"
+  },
+  "parts": {
+    "proportions": "proportions.json",
+    "joints": "joints.json",
+    "performances": "performances.json",
+    "conformance": "conformance/"
+  },
+  "conformanceFiles": [
+    "conformance/contacts.json",
+    "conformance/loop-seam.json",
+    "conformance/reach.json",
+    "conformance/rest-world.json"
+  ],
+  "integrity": "consumers pin the bundle by `${bundleId}@${bundleVersion}`; craft-check recomputes the content hash over this directory and reports it — mismatch between a doc's pin and the loaded bundle fails before compilation",
+  "deferred": [
+    "walking/running locomotion — deliberately unadvertised; route to a reviewed rigged asset (round22 §8)",
+    "finger rigs, facial deformation, deforming cloth — need the deformation level's authored rig path",
+    "mass models for support checks — support verdicts are unverified until a preset ships masses",
+    "bpy adapter parity — conformance cases in conformance/ are the shared acceptance list"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "pass": true,
+  "states": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "aspect": 1.0263157894736843,
+      "layout": [
+        390,
+        380
+      ],
+      "buffer": [
+        390,
+        380
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "aspect": 2.229965156794425,
+      "layout": [
+        1280,
+        574
+      ],
+      "buffer": [
+        1280,
+        574
+      ]
+    },
+    {
+      "viewport": [
+        360,
+        780
+      ],
+      "aspect": 1.139240506329114,
+      "layout": [
+        360,
+        316
+      ],
+      "buffer": [
+        360,
+        316
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "aspect": 1.0263157894736843,
+      "layout": [
+        390,
+        380
+      ],
+      "buffer": [
+        390,
+        380
+      ]
+    }
+  ],
+  "immediate": {
+    "aspect": 0.7142857142857143,
+    "layout": [
+      300,
+      420
+    ],
+    "buffer": [
+      300,
+      420
+    ]
+  },
+  "repeatDiff": {
+    "same": true,
+    "diffPixels": 0,
+    "diffRatio": 0,
+    "maxDelta": 0
+  },
+  "errors": []
+}

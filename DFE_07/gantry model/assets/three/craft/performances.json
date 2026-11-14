@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "status": "proving — round22 §7 first slice: named idle/look/reach + hold + sit, optional life layers; walking/locomotion deliberately unadvertised (route to a reviewed rigged asset)",
+  "poseLibrary": {
+    "idle": {
+      "kind": "rest",
+      "channels": {},
+      "supports": ["foot.L", "foot.R"],
+      "life": ["breathe", "blink", "microSway"],
+      "transition": { "frames": 18, "easing": "out_cubic" }
+    },
+    "hold": {
+      "kind": "hold",
+      "channels": "inherit",
+      "supports": "inherit",
+      "life": "none",
+      "transition": { "frames": 0, "easing": "hold" },
+      "note": "deliberate stillness — holds whatever channels the previous pose reached; life layers suspended (round22 §7)"
+    },
+    "look": {
+      "kind": "gaze",
+      "requires": "target",
+      "joints": { "neck": 0.4, "head": 0.6 },
+      "supports": "inherit",
+      "life": ["breathe", "blink", "microSway"],
+      "transition": { "frames": 18, "easing": "out_cubic" },
+      "note": "head share 0.6 is a pack tuning parameter (round22 §7), not a law that heads lead eyes"
+    },
+    "reach": {
+      "kind": "ik",
+      "requires": "ik_target",
+      "chain": "arm.L",
+      "chains": { "arm.L": "arm.L", "arm.R": "arm.R" },
+      "supports": "inherit",
+      "life": ["breathe", "blink"],
+      "transition": { "frames": 18, "easing": "out_cubic" },
+      "settle": { "frames": 5, "overshoot": 0.08 },
+      "note": "unreachable targets produce craft/target-unreachable — the wrist is never silently stretched or the pose clamped to a reported success"
+    },
+    "sit": {
+      "kind": "seat",
+      "requires": "target",
+      "supports": ["seat", "foot.L", "foot.R"],
+      "life": ["breathe", "blink"],
+      "transition": { "frames": 20, "easing": "in_out_cubic" },
+      "seat": { "pelvisClearanceM": "hip joint height above the seat plane = 0.45 × thigh radius + hip-to-crotch drop; solved per preset" },
+      "note": "pelvis lowers to the declared seat affordance; both legs re-solve so the feet keep their planted contact"
+    }
+  },
+  "lifeLayers": {
+    "breathe": {
+      "rateHz": 0.25,
+      "amount": 0.015,
+      "channel": "mesh-scale",
+      "joint": "chest",
+      "axis": [1, 0.4, 1],
+      "restriction": "local chest deformation only — never whole-skeleton scale, never displacing locked hands or feet"
+    },
+    "blink": {
+      "periodS": [3, 5],
+      "eventMs": 167,
+      "doubleChance": 0.25,
+      "channel": "lid",
+      "restriction": "real closure on a compatible face capability; compiled once from seed, never resimulated on seek"
+    },
+    "weightShift": {
+      "freqHz": 0.1,
+      "ampRefM": 0.01,
+      "refHeightM": 1.7,
+      "axis": "lateral",
+      "restriction": "legs re-solve so active foot contacts hold — the pelvis moves, the patches do not"
+    },
+    "microSway": {
+      "freqHz": 0.22,
+      "ampRefM": 0.003,
+      "refHeightM": 1.7,
+      "axis": "lateral+fore",
+      "restriction": "no root drift through fixed contacts; amplitude scales with subject heightM"
+    },
+    "gaze": {
+      "headShare": 0.6,
+      "restriction": "named target required; bounded head/eye share; unsupported eye channels are rejected, not faked"
+    }
+  },
+  "easing": {
+    "arrival": "out_cubic",
+    "continuous": "in_out_cubic",
+    "overlapFrames": [2, 3],
+    "settleFrames": [4, 6],
+    "anticipationFrames": [3, 5],
+    "overshootMax": 0.12,
+    "note": "frame counts are the 24 fps defaults (83–125 ms overlap, 167–250 ms settle, 125–208 ms anticipation) — eligible channels only, never depth-multiplied delay"
+  },
+  "seamPolicy": {
+    "marginFraction": 0.12,
+    "marginFloorM": 0.0008,
+    "note": "ball cover margin = max(fraction × R, floor); containment is sqrt(capR² + capD²) ≤ R − margin (round22 §5.2)"
+  },
+  "contactPolicy": {
+    "tolerance": { "relative": 0.0006, "floorM": 0.0002 },
+    "note": "1 mm at 1.7 m human scale is the reviewed standing tolerance (round22 §6); other scales use relative × heightM, floored — never an exact-zero float test"
+  },
+  "packs": {
+    "lacquer-toy-character-v2": {
+      "id": "lacquer-toy-character-v2",
+      "bundle": "1design-craft@1.0.0",
+      "preset": "toy-v2",
+      "variants": ["toy-v2"],
+      "levels": ["rigid-hierarchy", "covered-rigid"],
+      "performances": ["idle", "hold", "look", "reach", "sit"],
+      "lifeLayers": ["breathe", "blink", "microSway", "weightShift"],
+      "covers": {
+        "shoulder.L": { "kind": "ballJoint" },
+        "shoulder.R": { "kind": "ballJoint" },
+        "hip.L": { "kind": "ballJoint" },
+        "hip.R": { "kind": "ballJoint" },
+        "elbow.L": { "kind": "peg" },
+        "elbow.R": { "kind": "peg" },
+        "knee.L": { "kind": "peg" },
+        "knee.R": { "kind": "peg" },
+        "wrist.L": { "kind": "peg" },
+        "wrist.R": { "kind": "peg" },
+        "ankle.L": { "kind": "peg" },
+        "ankle.R": { "kind": "peg" }
+      },
+      "grammar": {
+        "fps": 24,
+        "sampling": "per-frame",
+        "heldPoses": true,
+        "dialogueFace": "painted-blink-only",
+        "secondaryBudget": "2 channels beyond primaries",
+        "allowedActions": ["idle", "hold", "look", "reach", "sit"]
+      },
+      "face": { "kind": "painted", "blinkChannel": "lid-scale-y" }
+    },
+    "naturalistic-human-v2": {
+      "id": "naturalistic-human-v2",
+      "bundle": "1design-craft@1.0.0",
+      "preset": "naturalistic-v2",
+      "variants": ["naturalistic-v2"],
+      "levels": ["rigid-hierarchy", "covered-rigid"],
+      "performances": ["idle", "hold", "look", "reach", "sit"],
+      "lifeLayers": ["breathe", "blink", "microSway", "weightShift"],
+      "covers": {
+        "shoulder.L": { "kind": "ballJoint" },
+        "shoulder.R": { "kind": "ballJoint" },
+        "hip.L": { "kind": "ballJoint" },
+        "hip.R": { "kind": "ballJoint" },
+        "elbow.L": { "kind": "peg" },
+        "elbow.R": { "kind": "peg" },
+        "knee.L": { "kind": "peg" },
+        "knee.R": { "kind": "peg" },
+        "wrist.L": { "kind": "peg" },
+        "wrist.R": { "kind": "peg" },
+        "ankle.L": { "kind": "peg" },
+        "ankle.R": { "kind": "peg" }
+      },
+      "grammar": {
+        "fps": 24,
+        "sampling": "per-frame",
+        "heldPoses": true,
+        "dialogueFace": "none-in-this-version",
+        "secondaryBudget": "2 channels beyond primaries",
+        "allowedActions": ["idle", "hold", "look", "reach", "sit"]
+      },
+      "face": { "kind": "painted", "blinkChannel": "lid-scale-y" }
+    }
+  }
+}

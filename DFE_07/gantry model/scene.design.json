@@ -1,0 +1,1 @@
+{"schemaVersion":1,"seed":4,"parameters":{"lineSpeed":0.5},"meta":{"notes":"Approximately 5.0 m wide × 3.2 m high × 5.2 m deep. Metres; Y-up; floor-centred origin. Eight-second rigid transform clip Pick_Place_8s. lineSpeed range 0–1 default 0.5, playback multiplier 2 × lineSpeed."}}

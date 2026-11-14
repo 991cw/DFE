@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "loop-seam",
+  "kind": "motion",
+  "status": "authored — seam states hand-computed; quaternion q and −q are the same orientation by declared sign equivalence",
+  "note": "a seamless loop compares position, orientation, linear velocity and angular velocity at the seam (round22 §7). Equal position with unequal velocity is a seam failure — the acceptance list's equal-position/unequal-velocity case.",
+  "tolerances": { "positionM": 0.001, "angleDeg": 0.5, "linearVelMps": 0.01, "angularVelDps": 2.0 },
+  "cases": [
+    {
+      "id": "seam.clean",
+      "input": {
+        "a": { "position": [0, 0.07, 0], "quaternion": [0, 0, 0, 1], "linearVel": [0, 0, 0], "angularVelDps": [0, 0, 0] },
+        "b": { "position": [0, 0.07, 0], "quaternion": [0, 0, 0, -1], "linearVel": [0, 0, 0], "angularVelDps": [0, 0, 0] }
+      },
+      "expected": { "ok": true, "note": "q and −q close the loop — sign-equivalent orientations" }
+    },
+    {
+      "id": "seam.equal-position-unequal-velocity",
+      "input": {
+        "a": { "position": [0, 0.07, 0], "quaternion": [0, 0, 0, 1], "linearVel": [0.02, 0, 0], "angularVelDps": [0, 0, 0] },
+        "b": { "position": [0, 0.07, 0], "quaternion": [0, 0, 0, 1], "linearVel": [0, 0, 0], "angularVelDps": [0, 0, 0] }
+      },
+      "expected": { "ok": false, "diagnostic": "craft/loop-seam", "channel": "linearVel" }
+    },
+    {
+      "id": "seam.position-jump",
+      "input": {
+        "a": { "position": [0, 0.07, 0], "quaternion": [0, 0, 0, 1], "linearVel": [0, 0, 0], "angularVelDps": [0, 0, 0] },
+        "b": { "position": [0, 0.072, 0], "quaternion": [0, 0, 0, 1], "linearVel": [0, 0, 0], "angularVelDps": [0, 0, 0] }
+      },
+      "expected": { "ok": false, "diagnostic": "craft/loop-seam", "channel": "position" }
+    },
+    {
+      "id": "seam.travelling-loop",
+      "input": {
+        "a": { "position": [0, 0.07, 0], "quaternion": [0, 0, 0, 1], "linearVel": [0.1, 0, 0], "angularVelDps": [0, 0, 0] },
+        "b": { "position": [0.24, 0.07, 0], "quaternion": [0, 0, 0, 1], "linearVel": [0.1, 0, 0], "angularVelDps": [0, 0, 0] },
+        "rootDelta": [0.24, 0, 0]
+      },
+      "expected": { "ok": true, "note": "travelling loop: periodic pose + declared root-motion delta — the world root does not return to its start" }
+    }
+  ]
+}

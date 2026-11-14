@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "rubric": "critique-3d-v1",
+  "rubric_scale": 4,
+  "reviewer": "independent visual review agent",
+  "target": "finished-realtime",
+  "verdict": "pass",
+  "scores": [
+    {"dimension":"recognition-proportion","score":4,"evidence":["review-evidence/current-silhouette-front.png","review-evidence/current-silhouette-side.png","review-evidence/current-desktop.png"],"observation":"The four-column portal, long overhead rail pair, spanning bridge and hanging Cartesian lift read as a gantry at thumbnail size; the working opening stays large relative to the frame."},
+    {"dimension":"construction-continuity","score":3,"evidence":["review-evidence/clay-hero.png","review-evidence/clay-front.png","review-evidence/clay-top.png","review-evidence/gripper-transfer-detail.png"],"observation":"Rail ends sit over column heads, the blue crossbeam reaches both rail trucks, mast and gripper share a continuous assembly, and the fingers visibly flank the carried component. The construction reads as assembled rigid members rather than floating decorative shapes."},
+    {"dimension":"material-identity","score":3,"evidence":["review-evidence/shaded-front.png","review-evidence/shaded-top.png","review-evidence/gripper-transfer-detail.png"],"observation":"White structural members, grey guide surfaces, blue motion housings and orange gripper accents remain distinct matte colour roles. Black contact strips and motor details are readable without introducing a glossy or textured style."},
+    {"dimension":"lighting-readability","score":3,"evidence":["review-evidence/current-desktop.png","review-evidence/shaded-side.png","review-evidence/gripper-transfer-detail.png"],"observation":"Lit faces and grey side planes describe beam thickness, with open shadows under the stations and contact shadows at the feet. The light-coloured frame stays legible against the warm floor; the hard sun shadow is prominent but does not obscure the machine."},
+    {"dimension":"composition-depth","score":3,"evidence":["review-evidence/current-desktop.png","review-evidence/current-portrait.png","review-evidence/shaded-front.png","review-evidence/shaded-side.png","review-evidence/shaded-top.png"],"observation":"Desktop and portrait keep all four feet and the complete rail span inside the frame, with source and destination stations separated in the current hero angle. The foreground column can occlude part of the raised gripper in the hero view, but front/side views and the transfer detail expose it clearly."},
+    {"dimension":"grounding-clearance","score":3,"evidence":["review-evidence/clay-front.png","review-evidence/clay-side.png","review-evidence/current-desktop.png","review-evidence/motion-Pick_Place_8s-t2.png","review-evidence/motion-Pick_Place_8s-t5.png"],"observation":"Four broad bolted footplates sit on the floor and remain in the same places through the sampled operation. The suspended gripper clears the low station equipment in the raised pose, and lowering aligns with the source deck and open receiving tote."},
+    {"dimension":"motion-deformation","score":3,"evidence":["review-evidence/motion-Pick_Place_8s-t0.png","review-evidence/motion-Pick_Place_8s-t2.png","review-evidence/gripper-transfer-detail.png","review-evidence/motion-Pick_Place_8s-t5.png","review-evidence/motion-Pick_Place_8s-t7_99.png","review-evidence/motion-Pick_Place_8s-t8.png","review-evidence/loop-Pick_Place_8s-start.png","review-evidence/loop-Pick_Place_8s-end.png"],"observation":"Sampled poses show the bridge and carriage translating, the mast extending down to each station, and the component held between two rigid fingers during transfer. Frame members retain their shape. Near-end and start poses match visibly, including the workpiece returning to its source position."},
+    {"dimension":"style-fidelity","score":4,"evidence":["review-evidence/current-desktop.png","review-evidence/current-portrait.png","review-evidence/gripper-transfer-detail.png"],"observation":"Consistent crisp planar geometry, simple faceted hardware and matte palette blocks match flat-lowpoly throughout. Industrial detailing supports the mechanism without sci-fi ornaments or texture noise."}
+  ],
+  "applicableDimensions": 8,
+  "total": 26,
+  "mean": 3.25,
+  "criticalDefects": [],
+  "uncertain": [],
+  "evidenceNotes": [
+    "The original shot3d silhouette thumbnails contain responsive page UI rather than a machine silhouette and were excluded. The replacement current-silhouette-front.png and current-silhouette-side.png were inspected and are valid.",
+    "current-silhouette-hero.png is blank and was excluded. The valid front and side silhouettes plus clay and beauty hero frames supply recognition evidence.",
+    "The initial design-check/3d portrait frame predates the latest camera angle; final portrait composition was judged from review-evidence/current-portrait.png.",
+    "This is a visual review of captured poses, not a claim about exact metres, names, hierarchy, palette hex values, continuous acceleration, collision simulation, or export integrity. Those require the separate mechanical and runtime checks."
+  ]
+}

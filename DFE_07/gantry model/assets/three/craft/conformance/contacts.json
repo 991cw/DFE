@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "contacts",
+  "kind": "support",
+  "status": "authored — patch positions derived from preset skeleton sole/foot data by hand",
+  "note": "a contact interval declares the foot patch is planted on the ground plane: signed separation (patch minimum y − plane) and tangential slip (patch world xz drift while active) must stay within the pack tolerance — relative × heightM, floored (toy-v2: max(0.0006×0.25, 0.0002) = 0.0002 m).",
+  "toleranceM": 0.0002,
+  "cases": [
+    {
+      "id": "toy-standing.planted",
+      "input": { "preset": "toy-v2", "groundPlane": 0, "patchWorldY": 0, "patchDriftM": 0 },
+      "expected": { "ok": true, "separation": 0, "slip": 0 }
+    },
+    {
+      "id": "toy-standing.lifted-ground",
+      "input": { "preset": "toy-v2", "groundPlane": -0.05, "patchWorldY": 0, "patchDriftM": 0 },
+      "expected": { "ok": false, "diagnostic": "craft/contact-separation", "separation": 0.05 }
+    },
+    {
+      "id": "toy-standing.slip",
+      "input": { "preset": "toy-v2", "groundPlane": 0, "patchWorldY": 0, "patchDriftM": 0.006 },
+      "expected": { "ok": false, "diagnostic": "craft/contact-slip", "slip": 0.006 }
+    },
+    {
+      "id": "nat-standing.planted",
+      "input": { "preset": "naturalistic-v2", "groundPlane": 0, "patchWorldY": 0, "patchDriftM": 0.0008 },
+      "expected": { "ok": true, "separation": 0, "slip": 0.0008, "note": "1 mm human-scale standing tolerance (round22 §6): max(0.0006×1.7, 0.0002) = 0.00102 m — 0.8 mm drift is inside it" }
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "rubric": "critique-3d-v1",
+  "rubric_scale": 4,
+  "reviewer": "independent gate-repair review agent",
+  "reviewedAt": "2026-11-14T16:15:26.565Z",
+  "target": "finished-realtime",
+  "verdict": "pass",
+  "scores": [
+    {
+      "dimension": "recognition-proportion",
+      "score": 4,
+      "evidence": [
+        "review-evidence/current-silhouette-front.png",
+        "review-evidence/current-silhouette-side.png",
+        "review-evidence/current-portrait.png"
+      ],
+      "observation": "The four tall columns, twin elevated rails, broad travelling beam and hanging two-finger lift remain recognizable as an overhead gantry in silhouette. The opening underneath is much larger than the support members."
+    },
+    {
+      "dimension": "construction-continuity",
+      "score": 3,
+      "evidence": [
+        "review-evidence/final-clay-hero.png",
+        "review-evidence/final-clay-front.png",
+        "review-evidence/final-clay-top.png",
+        "review-evidence/repair-chain-pickup.png",
+        "review-evidence/repair-chain-transfer.png",
+        "review-evidence/repair-chain-delivery.png",
+        "review-evidence/repair-carriage-guides.png",
+        "review-evidence/gripper-transfer-detail.png"
+      ],
+      "observation": "Final clay views show rail ends seated over the four column heads and the bridge supported at both rail trucks. The refreshed carrier close-ups show short contiguous rigid links bending through a continuous U-fold at pickup, transfer and delivery; no visible open break remains. The grey guide strips seat against the blue carriage sleeve, and the two fingers flank the held workpiece."
+    },
+    {
+      "dimension": "material-identity",
+      "score": 3,
+      "evidence": [
+        "design-check/3d/1280x800-hero-t3.png",
+        "review-evidence/repair-carriage-guides.png",
+        "review-evidence/gripper-transfer-detail.png"
+      ],
+      "observation": "White portal members, grey guides, blue moving housings, orange grip elements and black pads/motor pieces remain separate matte colour roles. The rendered surfaces are consistently solid and texture-free."
+    },
+    {
+      "dimension": "lighting-readability",
+      "score": 3,
+      "evidence": [
+        "design-check/3d/1280x800-hero-t2.png",
+        "design-check/3d/390x844-hero-t5.png",
+        "review-evidence/gripper-transfer-detail.png"
+      ],
+      "observation": "Lit front faces and darker side planes reveal beam depth and the sleeve outline. Feet have visible contact shadows. The prominent directional floor shadow stays outside the active gripper region in the inspected poses."
+    },
+    {
+      "dimension": "composition-depth",
+      "score": 3,
+      "evidence": [
+        "review-evidence/current-desktop.png",
+        "review-evidence/current-portrait.png",
+        "design-check/3d/390x844-hero-t2.png",
+        "design-check/3d/390x844-hero-t3.png",
+        "design-check/3d/390x844-hero-t5.png"
+      ],
+      "observation": "Final desktop and portrait frames retain all four footplates and the rail span inside the canvas with margin. The pickup station and tote remain separated. The near column overlaps the central assembly at some raised poses, but t3 exposes the carried part and the dedicated gripper view provides unobstructed contact evidence."
+    },
+    {
+      "dimension": "grounding-clearance",
+      "score": 3,
+      "evidence": [
+        "review-evidence/final-clay-front.png",
+        "design-check/3d/1280x800-hero-t2.png",
+        "design-check/3d/1280x800-hero-t5.png",
+        "design-check/3d/390x844-hero-t5.png"
+      ],
+      "observation": "Footplates meet the floor and the columns keep the same visible stance across pickup and delivery samples. The lowered jaws align with the roller deck and tote opening; the raised transfer pose clears the stations."
+    },
+    {
+      "dimension": "motion-deformation",
+      "score": 3,
+      "evidence": [
+        "design-check/3d/1280x800-hero-t2.png",
+        "design-check/3d/1280x800-hero-t3.png",
+        "design-check/3d/1280x800-hero-t5.png",
+        "review-evidence/repair-chain-pickup.png",
+        "review-evidence/repair-chain-transfer.png",
+        "review-evidence/repair-chain-delivery.png",
+        "review-evidence/gripper-transfer-detail.png",
+        "review-evidence/final-loop-t0.png",
+        "review-evidence/final-loop-t7.99.png"
+      ],
+      "observation": "Current pickup, elevated-transfer and delivery frames show the intended beam/carriage/mast translation with the fixed portal retaining its stance. The corrected carrier keeps a continuous folded silhouette at each sampled extreme. The part remains between rigid fingers in the contact detail; the fresh t0 and t7.99 boundary images visibly match. Exact inter-frame continuity and joint clearances remain the separate mechanical audit."
+    },
+    {
+      "dimension": "style-fidelity",
+      "score": 4,
+      "evidence": [
+        "review-evidence/current-desktop.png",
+        "review-evidence/current-portrait.png",
+        "review-evidence/repair-chain-pickup.png",
+        "review-evidence/repair-chain-transfer.png",
+        "review-evidence/repair-chain-delivery.png",
+        "review-evidence/gripper-transfer-detail.png"
+      ],
+      "observation": "Planar beam faces, faceted fasteners and crisp matte blocks follow one flat-lowpoly style. Orange mechanical accents and sparse black details explain the equipment without sci-fi ornament or texture noise."
+    }
+  ],
+  "total": 26,
+  "mean": 3.25,
+  "applicableDimensions": 8,
+  "criticalDefects": [],
+  "uncertain": [],
+  "warningReview": [
+    {
+      "rule": "heur/sibling-overlap",
+      "status": "reviewed-no-visible-defect",
+      "evidence": [
+        "review-evidence/final-clay-hero.png",
+        "review-evidence/final-clay-front.png",
+        "review-evidence/final-clay-top.png"
+      ],
+      "observation": "The listed column material bounds correspond to seated footplates, fasteners, hazard strips and supported column heads. Final neutral views show deliberate assembled contacts rather than a large accidental intersection. This visually resolves the inspected assemblies; it is not a boolean-solid examination of every inventory box pair."
+    },
+    {
+      "rule": "heur/detached-parts",
+      "status": "reviewed-no-visible-defect-after-carrier-repair",
+      "evidence": [
+        "review-evidence/repair-chain-pickup.png",
+        "review-evidence/repair-chain-transfer.png",
+        "review-evidence/repair-chain-delivery.png",
+        "review-evidence/repair-carriage-guides.png",
+        "review-evidence/gripper-transfer-detail.png"
+      ],
+      "observation": "The final carrier close-ups now show contiguous short links through the complete U-fold in pickup, transfer and delivery poses. The carriage strips sit flush on the sleeve and the black gripper pad belongs to the mounted body. No floating break is visible in these diagnostics. Exact endpoint distances and the small overlap carried by hinge pins are assessed by the separate mechanical-verification.json audit, not inferred from pixels."
+    },
+    {
+      "rule": "heur/scale",
+      "status": "reviewed-no-visible-proportion-defect",
+      "evidence": [
+        "design-plan.md",
+        "review-evidence/current-desktop.png",
+        "review-evidence/final-clay-front.png"
+      ],
+      "observation": "The planned factory envelope is approximately 5.0 by 3.2 by 5.2 metres; the default style sample is one metre high. The portal-to-station proportions visually agree with factory equipment. Exact dimensions and units remain file-audit facts rather than visual measurements."
+    }
+  ],
+  "evidenceBoundaries": [
+    "The previous carrier images are excluded from this final review; construction and loop observations use newly captured final-clay, carrier diagnostics and final-loop frames.",
+    "The eight scores certify the inspected appearance and sampled poses. Exact palette hex values, names, hierarchy, metre bounds, acceleration, lineSpeed and continuous collision/adjacency properties require their separate runtime or mechanical checks.",
+    "The refreshed mechanical audit reports every adjacent cable-link endpoint within the hinge-pin radius across 481 samples; that is supplemental measured evidence, not a visual measurement made by this reviewer."
+  ],
+  "sourceSha256": "ec589ac085080492aa81db521843b20bd5045bf71687ca4373cede0f31d3a87a",
+  "exportSha256": "8a523851d7d6a7b6f971fc8024cf96896d98c4c7fbdd85e0988713a69a39a1c7",
+  "evidence": [
+    {
+      "path": "review-evidence/current-silhouette-front.png",
+      "sha256": "9fb40fb4c69b0b0986a715c91281796122eeb99e2421eec06bcc55c48efe2b30"
+    },
+    {
+      "path": "review-evidence/current-silhouette-side.png",
+      "sha256": "3cc1ee913768aaf6ffde55ce6e9594260401871e5e5d0fc08d3a2f62e64ed8ab"
+    },
+    {
+      "path": "review-evidence/current-portrait.png",
+      "sha256": "9f45c8f7d941a3273b2a8b78b53a51d983370e36cb1eb5164f28443133a60199"
+    },
+    {
+      "path": "review-evidence/final-clay-hero.png",
+      "sha256": "9caa91b3f2ce0fd3f4eb0bdcc117f9248c0b22cc1186728446f606bdd89731d8"
+    },
+    {
+      "path": "review-evidence/final-clay-front.png",
+      "sha256": "1aa5f126ce38c89c98c6e1164dbe53a1ab42ef7af7c0e00a1c199d47c37ab993"
+    },
+    {
+      "path": "review-evidence/final-clay-top.png",
+      "sha256": "16acb68ab89719b43f609a8babae42d59877d9d04de056e5d30d3b04e17ead07"
+    },
+    {
+      "path": "review-evidence/repair-chain-pickup.png",
+      "sha256": "9a0e92a1952d63fa50b60e0da4fa7fe3670b7669bf05704c4d63a3061d6b05d5"
+    },
+    {
+      "path": "review-evidence/repair-chain-transfer.png",
+      "sha256": "fc7a5f44681d243dc7d7282f57d196938a31f65fc2784618038cea2754fbaee7"
+    },
+    {
+      "path": "review-evidence/repair-chain-delivery.png",
+      "sha256": "43f919d7c7169fb9470fb0123aca64743e1d75979ed560a526a4fbce1c10154a"
+    },
+    {
+      "path": "review-evidence/repair-carriage-guides.png",
+      "sha256": "69194bdbc41130d890876db2fc55ba3d27e646d968446dbf04da94c24d1d4373"
+    },
+    {
+      "path": "review-evidence/gripper-transfer-detail.png",
+      "sha256": "a944916890d7cda4040156b639d3a604a034a92255dfc61fa57b30c772414628"
+    },
+    {
+      "path": "design-check/3d/1280x800-hero-t3.png",
+      "sha256": "7f767e4450f04117457a328cb66734ea1aca04d37b9584ff31b172ba4bd29962"
+    },
+    {
+      "path": "design-check/3d/1280x800-hero-t2.png",
+      "sha256": "6efb7f7b0518eb841f842c64bd83bf897dec84b53df1f2f82cc9eb9d42f1f6b7"
+    },
+    {
+      "path": "design-check/3d/390x844-hero-t5.png",
+      "sha256": "55ebcf7fae1ef7a637ad2a6c9211f21528383cacd6be989e2ae69e7f3acb4fa9"
+    },
+    {
+      "path": "review-evidence/current-desktop.png",
+      "sha256": "a0e1a6ea5785c2ec5d37390c7c278dd7542439416c68c47a6bba723e74603cbb"
+    },
+    {
+      "path": "design-check/3d/390x844-hero-t2.png",
+      "sha256": "80dcf4751726383575e51c9ecfb75d7a4fc7b17b7e8108645ee540c793653ace"
+    },
+    {
+      "path": "design-check/3d/390x844-hero-t3.png",
+      "sha256": "9a349e2d1954a3e0eebe528cdbc6fa0e26cfadd65db5919574cd4607e92b4b79"
+    },
+    {
+      "path": "design-check/3d/1280x800-hero-t5.png",
+      "sha256": "9b3c60c06d8b10338b0150adc6771f6d837598a7f88733358fd29b94c38bff0b"
+    },
+    {
+      "path": "review-evidence/final-loop-t0.png",
+      "sha256": "44ec5d880bf032fc9a5d1187d8555416594ced8bb9dc7cd41e9596ded1519146"
+    },
+    {
+      "path": "review-evidence/final-loop-t7.99.png",
+      "sha256": "96605f0a9cc71c27b2b4cc21d986b8a580c4b25e1191df2d286510d4fcc39347"
+    },
+    {
+      "path": "design-plan.md",
+      "sha256": "9e5120e255aff6e615043eb5299898c297f8c760bb9582e49c200f3768e46a23"
+    }
+  ],
+  "exportPath": "exports/robot-factory-gantry.glb",
+  "gateExportSha256": "5871ce8cedb554b1ac5b738eb503c13c4ce38b2481998c0aea76573544af00be",
+  "sourceHashes": {
+    "index.html": "32ed54a5a9537e125edc29536835b10faa91e413456df822920ad50003131aab",
+    "assets/three/scene.js": "ec589ac085080492aa81db521843b20bd5045bf71687ca4373cede0f31d3a87a",
+    "assets/three/runtime.js": "002b56cfeaf7f10e25a5c6376aa0b2f6fa1322f46bce44c3caab601178461e85"
+  },
+  "supplementalEvidence": [
+    {
+      "path": "mechanical-verification.json",
+      "sha256": "4b41d00f552dba5a2b68cb5dc89d93ca2c96951f72a602361fe446a49681282b"
+    },
+    {
+      "path": "resize-verification.json",
+      "sha256": "7916a6237c5b7ba934ba49a93a60c79de607d2eb90503b6fd42d0df8def28f1d"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+﻿import {readFileSync,writeFileSync}from'node:fs';
+for(const p of ['visual-review.json','scene.design.json'])writeFileSync(p,readFileSync(p,'utf8').replace(/^\uFEFF/,''));
+const p='design-evidence/design-notes.json',doc=JSON.parse(readFileSync(p,'utf8').replace(/^\uFEFF/,''));for(const n of doc.notes)if(n.id==='note_return_shuttle')n.cites=[{kind:'plan',ref:'sections'}];writeFileSync(p,JSON.stringify(doc,null,2));
+let plan=readFileSync('design-plan.md','utf8');plan=plan.replace('Eight-second rigid pick-and-place cycle, playback and lineSpeed control; model GLB and rendered PNG downloads.','Eight-second rigid pick-and-place cycle with a low return shuttle restoring the demonstration workpiece continuously; playback and lineSpeed control; model GLB and rendered PNG downloads.');writeFileSync('design-plan.md',plan);

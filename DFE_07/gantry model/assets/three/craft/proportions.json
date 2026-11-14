@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "status": "proving — round22 §4 candidate calibration resolved into complete presets; stress-pose evidence still required before 'released'",
+  "units": {
+    "surface": "heads below the crown (0 = crown top)",
+    "widths": "heads",
+    "skeleton": "metres, canonical frame (right-handed, +Y up, +Z character-forward, character-left +X)"
+  },
+  "note": "surface landmarks and skeleton joint centres are different data (round22 §1 review): joints live inside the silhouette, surface points on it. Fingertips are derived from wrist + hand length + pose, never asserted independently.",
+  "presets": {
+    "naturalistic-v2": {
+      "id": "naturalistic-v2",
+      "family": "naturalistic",
+      "headsTall": 7.5,
+      "heightM": 1.7,
+      "headM": 0.226667,
+      "surface": {
+        "chin": 1.0,
+        "shoulderSurface": 1.4,
+        "chestRef": 2.0,
+        "navel": 3.0,
+        "crotchSurface": 3.75,
+        "kneeSurface": 5.5,
+        "ankleSurface": 7.3,
+        "sole": 7.5
+      },
+      "widths": {
+        "shoulderW": 2.2,
+        "hipW": 1.65,
+        "chestDepth": 0.9,
+        "handLen": 0.75,
+        "footLen": 1.0,
+        "headW": 0.72,
+        "skullDepthRatio": 1.15,
+        "upperArmR": 0.42,
+        "forearmR": 0.33,
+        "thighR": 0.62,
+        "shinR": 0.45,
+        "neckR": 0.42,
+        "handR": 0.28
+      },
+      "face": {
+        "convention": "fractions of crown→chin distance, measured downward",
+        "eyeLine": 0.5,
+        "noseBase": 0.75,
+        "mouth": 0.85,
+        "eyeWidthHeads": 0.3,
+        "eyeSeparation": "one eye-width between inner corners",
+        "skullDepth": "1.15 × head width (review starting point)"
+      },
+      "skeleton": {
+        "pelvis": [0, 0.884, 0],
+        "abdomen": [0, 1.088, 0.005],
+        "chest": [0, 1.247, 0.01],
+        "neck": [0, 1.394, 0.012],
+        "head": [0, 1.428, 0.02],
+        "crown": [0, 1.7, 0.01],
+        "shoulder.L": [0.19, 1.372, 0],
+        "elbow.L": [0.19, 1.015, 0],
+        "forearmTwist.L": [0.19, 0.981, 0],
+        "wrist.L": [0.19, 0.845, 0],
+        "hip.L": [0.094, 0.838, 0],
+        "knee.L": [0.094, 0.465, 0],
+        "ankle.L": [0.094, 0.058, 0],
+        "heel.L": [0.094, 0.02, -0.045],
+        "ball.L": [0.094, 0.02, 0.055],
+        "toe.L": [0.094, 0.01, 0.177]
+      },
+      "reviewCues": {
+        "elbowNearNavel": true,
+        "wristNearCrotch": true,
+        "note": "reference-pose review cues only — asserted by craft-check as warnings when grossly violated, never as anatomy law"
+      }
+    },
+    "toy-v2": {
+      "id": "toy-v2",
+      "family": "toy",
+      "headsTall": 4,
+      "heightM": 0.25,
+      "headM": 0.0625,
+      "surface": {
+        "chin": 1.0,
+        "shoulderSurface": 1.3,
+        "chestRef": 1.8,
+        "navel": 2.4,
+        "crotchSurface": 2.9,
+        "kneeSurface": 3.45,
+        "ankleSurface": 3.85,
+        "sole": 4.0
+      },
+      "widths": {
+        "shoulderW": 1.6,
+        "hipW": 1.2,
+        "chestDepth": 0.8,
+        "handLen": 0.5,
+        "footLen": 0.8,
+        "headW": 1.0,
+        "skullDepthRatio": 1.0,
+        "upperArmR": 0.55,
+        "forearmR": 0.48,
+        "thighR": 0.62,
+        "shinR": 0.55,
+        "neckR": 0.4,
+        "handR": 0.4
+      },
+      "face": {
+        "convention": "fractions of crown→chin distance, measured downward",
+        "eyeLine": 0.45,
+        "noseBase": 0.7,
+        "mouth": 0.82,
+        "eyeWidthHeads": 0.22,
+        "eyeSeparation": "one eye-width between inner corners",
+        "skullDepth": "1.0 × head width"
+      },
+      "skeleton": {
+        "pelvis": [0, 0.072, 0],
+        "abdomen": [0, 0.108, 0.003],
+        "chest": [0, 0.134, 0.005],
+        "neck": [0, 0.16, 0.005],
+        "head": [0, 0.176, 0.008],
+        "crown": [0, 0.25, 0.005],
+        "shoulder.L": [0.038, 0.148, 0],
+        "elbow.L": [0.038, 0.099, 0],
+        "forearmTwist.L": [0.038, 0.084, 0],
+        "wrist.L": [0.038, 0.068, 0],
+        "hip.L": [0.022, 0.066, 0],
+        "knee.L": [0.022, 0.04, 0],
+        "ankle.L": [0.022, 0.013, 0],
+        "heel.L": [0.022, 0.004, -0.008],
+        "ball.L": [0.022, 0.004, 0.012],
+        "toe.L": [0.022, 0.003, 0.037]
+      },
+      "reviewCues": {
+        "elbowNearNavel": true,
+        "wristNearCrotch": true,
+        "note": "reference-pose review cues only"
+      }
+    }
+  },
+  "families": {
+    "heroic": { "headsTall": 8, "policy": "reviewed elongated preset required — no preset ships in this bundle version" },
+    "naturalistic": { "headsTall": 7.5, "preset": "naturalistic-v2" },
+    "stylized": { "headsTall": [5, 6], "policy": "pack pins an exact preset, not a runtime range — none ships in this bundle version" },
+    "toy": { "headsTall": [3, 4], "preset": "toy-v2" },
+    "super-deformed": { "headsTall": [2, 2.5], "policy": "independent landmarks and capability limits — none ships in this bundle version" }
+  },
+  "migrations": {
+    "v1-presets": "parts.proportions() presets (toy ~4.5 heads, chibi ~2.5, stylised-human ~6, realistic ~7.5) remain stable for existing scenes. craft presets are v2: a doc names them explicitly via craftPack/construction.variant — v1 scenes are never reinterpreted, and whole-body eyeY values stay whole-body."
+  }
+}

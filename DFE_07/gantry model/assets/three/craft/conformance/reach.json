@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "reach",
+  "kind": "ik",
+  "status": "authored — chain lengths derived from preset skeletons by hand, not by the solver under test",
+  "note": "solveTwoBone is a position solve on the declared chain: root fixed at its skeleton landmark, mid bend chosen by the preset-local pole, end = wrist/ankle landmark. Unreachable means |target − root| > l1 + l2: a typed diagnostic with the residual, never a clamped 'success' (round22 §6).",
+  "toleranceM": 0.001,
+  "cases": [
+    {
+      "id": "toy-arm.L.forward",
+      "input": { "preset": "toy-v2", "chain": "arm.L", "target": [0.038, 0.1, 0.06] },
+      "expected": { "ok": true, "endResidual": 0 }
+    },
+    {
+      "id": "toy-arm.L.full-extension-singular",
+      "input": { "preset": "toy-v2", "chain": "arm.L", "target": [0.038, 0.148, 0.08] },
+      "expected": { "ok": true, "endResidual": 0, "note": "distance equals l1+l2 exactly — the straight-arm singularity; bend ≈ 0, solver must not NaN or flip the pole" }
+    },
+    {
+      "id": "toy-arm.L.unreachable",
+      "input": { "preset": "toy-v2", "chain": "arm.L", "target": [0.038, 0.2, 0.1] },
+      "expected": { "ok": false, "diagnostic": "craft/target-unreachable", "residual": 0.0327 }
+    },
+    {
+      "id": "toy-arm.R.mirrored",
+      "input": { "preset": "toy-v2", "chain": "arm.R", "target": [-0.038, 0.1, 0.06] },
+      "expected": { "ok": true, "endResidual": 0 }
+    },
+    {
+      "id": "nat-arm.L.forward",
+      "input": { "preset": "naturalistic-v2", "chain": "arm.L", "target": [0.19, 1.2, 0.3] },
+      "expected": { "ok": true, "endResidual": 0 }
+    },
+    {
+      "id": "nat-arm.L.unreachable",
+      "input": { "preset": "naturalistic-v2", "chain": "arm.L", "target": [0.19, 1.372, 0.6] },
+      "expected": { "ok": false, "diagnostic": "craft/target-unreachable", "residual": 0.073 }
+    },
+    {
+      "id": "nat-leg.L.reach",
+      "input": { "preset": "naturalistic-v2", "chain": "leg.L", "target": [0.094, 0.4, 0.3] },
+      "expected": { "ok": true, "endResidual": 0 }
+    }
+  ]
+}

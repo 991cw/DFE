@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate-tuning — round22 §6 initial inputs mapped to joint-local constraints; reviewed table, pending stress-pose fixture evidence",
+  "template": "humanoid-rigid-v1",
+  "frames": {
+    "convention": "joint-local rest frame: +Y aims from the joint toward its listed child (bone axis); +X = normalize(+Y × +Zworld); +Z completes the right-handed basis. Down-pointing bones therefore share bend axis −X: elbow flexion reads positive, knee flexion negative, exactly as the limits table declares.",
+    "channelModel": {
+      "swing": "two dof — pitch about local +X, roll about local +Z",
+      "twist": "one dof — axial rotation about local +Y (the bone axis)",
+      "hinge": "one dof — bend about local +X, sign per joint range",
+      "compose": "q = qx(pitch) · qz(roll) · qy(twist), intrinsic order X-Z-Y, degrees in channel data",
+      "interpolate": "per-channel linear in degrees across a transition window; quaternions compose only after channel evaluation"
+    },
+    "mirror": {
+      "plane": "yz",
+      "position": [-1, 1, 1],
+      "channels": { "pitch": 1, "roll": -1, "twist": -1, "position": [-1, 1, 1] },
+      "limits": "mirrored channels negate and swap the declared range: [lo,hi] → [−hi,−lo]",
+      "note": "L side is authored in this file; R side is derived. Mirrored-side fixtures are required evidence (round22 §10)."
+    }
+  },
+  "joints": {
+    "pelvis": {
+      "kind": "root",
+      "parent": null,
+      "attach": "pelvis",
+      "child": "abdomen",
+      "channels": ["position", "swing", "twist"],
+      "limits": null,
+      "seam": { "cover": "none" },
+      "note": "root motion lives here and nowhere else — limb joints never translate"
+    },
+    "abdomen": {
+      "kind": "swing-twist",
+      "parent": "pelvis",
+      "attach": "abdomen",
+      "child": "chest",
+      "channels": ["swing", "twist"],
+      "limits": { "pitch": [-20, 35], "roll": [-25, 25], "twist": [-25, 25] },
+      "seam": { "cover": "none" }
+    },
+    "chest": {
+      "kind": "swing-twist",
+      "parent": "abdomen",
+      "attach": "chest",
+      "child": "neck",
+      "channels": ["swing", "twist"],
+      "limits": { "pitch": [-15, 25], "roll": [-30, 30], "twist": [-20, 20] },
+      "seam": { "cover": "none" }
+    },
+    "neck": {
+      "kind": "swing-twist",
+      "parent": "chest",
+      "attach": "neck",
+      "child": "head",
+      "channels": ["swing", "twist"],
+      "limits": { "pitch": [-35, 30], "roll": [-20, 20], "twist": [-45, 45] },
+      "seam": { "cover": "none" }
+    },
+    "head": {
+      "kind": "swing-twist",
+      "parent": "neck",
+      "attach": "head",
+      "child": "crown",
+      "channels": ["swing", "twist"],
+      "limits": { "pitch": [-20, 20], "roll": [-15, 15], "twist": [-30, 30] },
+      "seam": { "cover": "none" },
+      "note": "upper-neck pivot — neck-base motion stays on 'neck'; do not merge them"
+    },
+    "shoulder.L": {
+      "kind": "swing-twist",
+      "parent": "chest",
+      "attach": "shoulder.L",
+      "child": "elbow.L",
+      "side": "L",
+      "channels": ["swing", "twist"],
+      "limits": { "pitch": [-60, 180], "roll": [-90, 90], "twist": [-45, 120] },
+      "seam": { "cover": "ball", "margin": "pack seam policy" }
+    },
+    "elbow.L": {
+      "kind": "hinge",
+      "parent": "shoulder.L",
+      "attach": "elbow.L",
+      "child": "forearmTwist.L",
+      "side": "L",
+      "channels": ["bend"],
+      "limits": { "bend": [0, 150] },
+      "pole": { "in": "shoulder.L", "dir": [0, 0, -1], "note": "elbow tip points behind the character at rest — preset-local frame, not a world constant" },
+      "seam": { "cover": "peg" }
+    },
+    "forearmTwist.L": {
+      "kind": "twist",
+      "parent": "elbow.L",
+      "attach": "forearmTwist.L",
+      "child": "wrist.L",
+      "side": "L",
+      "channels": ["twist"],
+      "limits": { "twist": [-80, 80] },
+      "seam": { "cover": "none" },
+      "note": "pronation/supination owns the forearm's axial channel — the elbow stays a pure hinge and the wrist has no duplicated roll"
+    },
+    "wrist.L": {
+      "kind": "swing",
+      "parent": "forearmTwist.L",
+      "attach": "wrist.L",
+      "child": null,
+      "side": "L",
+      "channels": ["swing"],
+      "limits": { "pitch": [-70, 80], "roll": [-25, 25] },
+      "seam": { "cover": "peg" }
+    },
+    "hip.L": {
+      "kind": "swing-twist",
+      "parent": "pelvis",
+      "attach": "hip.L",
+      "child": "knee.L",
+      "side": "L",
+      "channels": ["swing", "twist"],
+      "limits": { "pitch": [-120, 30], "roll": [-45, 45], "twist": [-45, 30] },
+      "seam": { "cover": "ball", "margin": "pack seam policy" }
+    },
+    "knee.L": {
+      "kind": "hinge",
+      "parent": "hip.L",
+      "attach": "knee.L",
+      "child": "ankle.L",
+      "side": "L",
+      "channels": ["bend"],
+      "limits": { "bend": [-140, 0] },
+      "pole": { "in": "hip.L", "dir": [0, 0, 1], "note": "knee tip points forward at rest" },
+      "seam": { "cover": "peg" }
+    },
+    "ankle.L": {
+      "kind": "swing-twist",
+      "parent": "knee.L",
+      "attach": "ankle.L",
+      "child": "ball.L",
+      "side": "L",
+      "channels": ["swing", "twist"],
+      "limits": { "pitch": [-40, 25], "roll": [-15, 15], "twist": [-20, 20] },
+      "seam": { "cover": "peg" },
+      "note": "ankle motion is separate from foot roll — heel/ball/toe pivots live on foot.L"
+    },
+    "foot.L": {
+      "kind": "hinge",
+      "parent": "ankle.L",
+      "attach": "ball.L",
+      "child": "toe.L",
+      "side": "L",
+      "channels": ["bend"],
+      "limits": { "bend": [-30, 60] },
+      "pivots": { "heel": "heel.L", "ball": "ball.L", "toe": "toe.L" },
+      "seam": { "cover": "none" },
+      "note": "the tested foot-roll control: heel/ball/toe pivots land on the skeleton landmarks of the same name"
+    }
+  },
+  "chains": {
+    "arm.L": { "root": "shoulder.L", "mid": "elbow.L", "end": "wrist.L", "twist": "forearmTwist.L", "pole": "elbow.L.pole" },
+    "leg.L": { "root": "hip.L", "mid": "knee.L", "end": "ankle.L", "foot": "foot.L", "pole": "knee.L.pole" }
+  },
+  "combined": [
+    {
+      "id": "neck-head",
+      "joints": ["neck", "head"],
+      "rule": "sum",
+      "limits": { "pitch": [-40, 40], "twist": [-55, 55] },
+      "note": "individually legal neck+head channels must not sum to an implausible gaze — checked on evaluated pose, not on inputs"
+    }
+  ],
+  "forbidden": {
+    "limbChannels": ["position", "scale"],
+    "appliesTo": "every joint except pelvis (root position) — a limb that translates or scales is detached, not posed",
+    "nonUniformScaleAtPivots": "unsupported in this bundle version"
+  }
+}

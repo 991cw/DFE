@@ -1,0 +1,1121 @@
+{
+  "assertions": [
+    {
+      "name": "Exact component names",
+      "pass": true,
+      "detail": [
+        "Gantry_Base",
+        "Column_FL",
+        "Column_FR",
+        "Column_RL",
+        "Column_RR",
+        "Rail_Left",
+        "Rail_Right",
+        "Bridge_Z",
+        "Carriage_X",
+        "Lift_Y",
+        "Gripper_Body",
+        "Finger_Left",
+        "Finger_Right",
+        "Motor_Bridge",
+        "Motor_Carriage",
+        "Motor_Lift",
+        "Cable_Chain",
+        "Limit_Sensors",
+        "Safety_Light"
+      ]
+    },
+    {
+      "name": "Mechanical parent chain",
+      "pass": true,
+      "detail": {
+        "Carriage_X": "Bridge_Z",
+        "Lift_Y": "Carriage_X",
+        "Gripper_Body": "Lift_Y",
+        "Finger_Left": "Gripper_Body",
+        "Finger_Right": "Gripper_Body",
+        "Motor_Bridge": "Bridge_Z",
+        "Motor_Carriage": "Carriage_X",
+        "Motor_Lift": "Carriage_X"
+      }
+    },
+    {
+      "name": "Only exact named palette materials",
+      "pass": true,
+      "detail": [
+        {
+          "name": "light grey dark",
+          "color": "7c7f83",
+          "metalness": 0
+        },
+        {
+          "name": "light grey",
+          "color": "a3a5a8",
+          "metalness": 0
+        },
+        {
+          "name": "white",
+          "color": "f4f1ec",
+          "metalness": 0
+        },
+        {
+          "name": "soot black",
+          "color": "1b1b22",
+          "metalness": 0
+        },
+        {
+          "name": "orange",
+          "color": "ed7e1d",
+          "metalness": 0
+        },
+        {
+          "name": "light grey light",
+          "color": "cccccc",
+          "metalness": 0
+        },
+        {
+          "name": "electric blue",
+          "color": "136dec",
+          "metalness": 0
+        },
+        {
+          "name": "white dark",
+          "color": "d7cebc",
+          "metalness": 0
+        },
+        {
+          "name": "white light",
+          "color": "f9f8f6",
+          "metalness": 0
+        }
+      ]
+    },
+    {
+      "name": "Eight-second rigid baked clip",
+      "pass": true,
+      "detail": {
+        "name": "Pick_Place_8s",
+        "duration": 8,
+        "tracks": 73
+      }
+    },
+    {
+      "name": "Cable carrier pins bridge every rigid link joint",
+      "pass": true,
+      "detail": {
+        "maxJointGapMetres": 0.011375686942854542,
+        "pinRadiusMetres": 0.018,
+        "samples": 481
+      }
+    },
+    {
+      "name": "Frame and fixed rails stationary throughout",
+      "pass": true,
+      "detail": {
+        "maxTransformDrift": 0
+      }
+    },
+    {
+      "name": "Correct prismatic axes",
+      "pass": true,
+      "detail": {
+        "maxOffAxisError": 5.551115123125783e-17
+      }
+    },
+    {
+      "name": "Symmetric independent fingers",
+      "pass": true,
+      "detail": {
+        "maxSymmetryError": 0
+      }
+    },
+    {
+      "name": "No stretching or mesh deformation",
+      "pass": true,
+      "detail": {
+        "maxScaleDrift": 0
+      }
+    },
+    {
+      "name": "Workpiece follows grip without detachment",
+      "pass": true,
+      "detail": {
+        "maxErrorMetres": 1.0219339754720262e-7
+      }
+    },
+    {
+      "name": "All rigid nodes close the loop",
+      "pass": true,
+      "detail": {
+        "maxSeamError": 2.9802322387695312e-8
+      }
+    },
+    {
+      "name": "Floor-centred origin and metre metadata",
+      "pass": true,
+      "detail": {
+        "notes": "Industrial overhead Cartesian gantry: approximately 5.0 m wide × 3.2 m high × 5.2 m deep. Units: metres. Y-up. Model origin is the centre of the base at floor level. Exact named rigid motion nodes; baked eight-second Pick_Place_8s clip. lineSpeed range 0–1, default 0.5; playback multiplier 2 × lineSpeed. Demonstration station lift tables and a low return shuttle reset the single workpiece continuously."
+      }
+    },
+    {
+      "name": "Factory-scale envelope",
+      "pass": true,
+      "detail": {
+        "min": [
+          -2.5,
+          -7.450580430390374e-11,
+          -2.6
+        ],
+        "max": [
+          2.5,
+          3.209999978542328,
+          2.6
+        ]
+      }
+    },
+    {
+      "name": "lineSpeed metadata preserved",
+      "pass": true,
+      "detail": {
+        "lineSpeed": {
+          "min": 0,
+          "max": 1,
+          "default": 0.5,
+          "value": 0.5,
+          "animation": "Pick_Place_8s",
+          "playbackMultiplier": 2
+        }
+      }
+    }
+  ],
+  "allPassed": true,
+  "diagnostics": {
+    "phase": "ready",
+    "error": null,
+    "version": 1,
+    "three": "180",
+    "seed": 4,
+    "time": 0,
+    "frame": 5,
+    "pass": "beauty",
+    "quality": "high",
+    "playing": false,
+    "bloom": false,
+    "reducedMotion": false,
+    "capture": true,
+    "camera": {
+      "position": [
+        -7.2351596430148195,
+        5.639533135008234,
+        9.244926210518935
+      ],
+      "target": [
+        0,
+        1.62,
+        0
+      ],
+      "fov": 36,
+      "near": 0.03954035852080617,
+      "far": 141.48929642530004,
+      "aspect": 2.229965156794425
+    },
+    "bounds": {
+      "center": [
+        0,
+        1.604999989233911,
+        0
+      ],
+      "radius": 3.947914001809059
+    },
+    "render": {
+      "calls": 116,
+      "triangles": 5170,
+      "points": 0,
+      "lines": 0
+    },
+    "memory": {
+      "geometries": 140,
+      "textures": 5
+    },
+    "programs": 7,
+    "parts": [
+      {
+        "id": "gantry",
+        "label": "Robot Factory gantry",
+        "visible": true
+      },
+      {
+        "id": "gantry.base",
+        "label": "Gantry_Base",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_fl",
+        "label": "Column_FL",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_fr",
+        "label": "Column_FR",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_rl",
+        "label": "Column_RL",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_rr",
+        "label": "Column_RR",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_left",
+        "label": "Rail_Left",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_right",
+        "label": "Rail_Right",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge",
+        "label": "Bridge_Z",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage",
+        "label": "Carriage_X",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift",
+        "label": "Lift_Y",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift.gripper",
+        "label": "Gripper_Body",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift.gripper.finger_left",
+        "label": "Finger_Left",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift.gripper.finger_right",
+        "label": "Finger_Right",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.motor",
+        "label": "Motor_Bridge",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.motor",
+        "label": "Motor_Carriage",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.motor_lift",
+        "label": "Motor_Lift",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain",
+        "label": "Cable_Chain",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_0",
+        "label": "Cable_Link_01",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_1",
+        "label": "Cable_Link_02",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_2",
+        "label": "Cable_Link_03",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_3",
+        "label": "Cable_Link_04",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_4",
+        "label": "Cable_Link_05",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_5",
+        "label": "Cable_Link_06",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_6",
+        "label": "Cable_Link_07",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_7",
+        "label": "Cable_Link_08",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_8",
+        "label": "Cable_Link_09",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_9",
+        "label": "Cable_Link_10",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_10",
+        "label": "Cable_Link_11",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_11",
+        "label": "Cable_Link_12",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_12",
+        "label": "Cable_Link_13",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_13",
+        "label": "Cable_Link_14",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_14",
+        "label": "Cable_Link_15",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_15",
+        "label": "Cable_Link_16",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_16",
+        "label": "Cable_Link_17",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_17",
+        "label": "Cable_Link_18",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_18",
+        "label": "Cable_Link_19",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_19",
+        "label": "Cable_Link_20",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_20",
+        "label": "Cable_Link_21",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_21",
+        "label": "Cable_Link_22",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_22",
+        "label": "Cable_Link_23",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_23",
+        "label": "Cable_Link_24",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_24",
+        "label": "Cable_Link_25",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_25",
+        "label": "Cable_Link_26",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_26",
+        "label": "Cable_Link_27",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_27",
+        "label": "Cable_Link_28",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_28",
+        "label": "Cable_Link_29",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_29",
+        "label": "Cable_Link_30",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_30",
+        "label": "Cable_Link_31",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_31",
+        "label": "Cable_Link_32",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.sensors",
+        "label": "Limit_Sensors",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.light",
+        "label": "Safety_Light",
+        "visible": true
+      },
+      {
+        "id": "gantry.conveyor",
+        "label": "Source_Conveyor",
+        "visible": true
+      },
+      {
+        "id": "gantry.conveyor.table",
+        "label": "Source_Lift_Table",
+        "visible": true
+      },
+      {
+        "id": "gantry.box",
+        "label": "Destination_Box",
+        "visible": true
+      },
+      {
+        "id": "gantry.box.table",
+        "label": "Receiving_Lift_Table",
+        "visible": true
+      },
+      {
+        "id": "gantry.return_track",
+        "label": "Return_Shuttle_Track",
+        "visible": true
+      },
+      {
+        "id": "gantry.return_track.shuttle",
+        "label": "Return_Shuttle",
+        "visible": true
+      },
+      {
+        "id": "gantry.workpiece",
+        "label": "Demo_Workpiece",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.mesh_0",
+        "label": "Gantry_Base_white",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.mesh_1",
+        "label": "Gantry_Base_light_grey",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.mesh_2",
+        "label": "Gantry_Base_light_grey_light",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.mesh_3",
+        "label": "Gantry_Base_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.mesh_4",
+        "label": "Gantry_Base_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_fl.mesh_0",
+        "label": "Column_FL_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_fl.mesh_1",
+        "label": "Column_FL_light_grey",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_fl.mesh_2",
+        "label": "Column_FL_white",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_fl.mesh_3",
+        "label": "Column_FL_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_fl.mesh_4",
+        "label": "Column_FL_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_fr.mesh_0",
+        "label": "Column_FR_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_fr.mesh_1",
+        "label": "Column_FR_light_grey",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_fr.mesh_2",
+        "label": "Column_FR_white",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_fr.mesh_3",
+        "label": "Column_FR_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_fr.mesh_4",
+        "label": "Column_FR_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_rl.mesh_0",
+        "label": "Column_RL_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_rl.mesh_1",
+        "label": "Column_RL_light_grey",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_rl.mesh_2",
+        "label": "Column_RL_white",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_rl.mesh_3",
+        "label": "Column_RL_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_rl.mesh_4",
+        "label": "Column_RL_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_rr.mesh_0",
+        "label": "Column_RR_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_rr.mesh_1",
+        "label": "Column_RR_light_grey",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_rr.mesh_2",
+        "label": "Column_RR_white",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_rr.mesh_3",
+        "label": "Column_RR_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.column_rr.mesh_4",
+        "label": "Column_RR_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_left.mesh_0",
+        "label": "Rail_Left_white",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_left.mesh_1",
+        "label": "Rail_Left_light_grey",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_left.mesh_2",
+        "label": "Rail_Left_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_left.mesh_3",
+        "label": "Rail_Left_light_grey_light",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_left.mesh_4",
+        "label": "Rail_Left_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_left.mesh_5",
+        "label": "Rail_Left_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_right.mesh_0",
+        "label": "Rail_Right_white",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_right.mesh_1",
+        "label": "Rail_Right_light_grey",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_right.mesh_2",
+        "label": "Rail_Right_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_right.mesh_3",
+        "label": "Rail_Right_light_grey_light",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_right.mesh_4",
+        "label": "Rail_Right_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.rail_right.mesh_5",
+        "label": "Rail_Right_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.mesh_0",
+        "label": "Bridge_Z_electric_blue",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.mesh_1",
+        "label": "Bridge_Z_light_grey_light",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.mesh_2",
+        "label": "Bridge_Z_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.mesh_3",
+        "label": "Bridge_Z_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.mesh_4",
+        "label": "Bridge_Z_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.mesh_0",
+        "label": "Carriage_X_electric_blue",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.mesh_1",
+        "label": "Carriage_X_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.mesh_2",
+        "label": "Carriage_X_light_grey_light",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift.mesh_0",
+        "label": "Lift_Y_light_grey_light",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift.mesh_1",
+        "label": "Lift_Y_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift.mesh_2",
+        "label": "Lift_Y_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift.gripper.mesh_0",
+        "label": "Gripper_Body_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift.gripper.mesh_1",
+        "label": "Gripper_Body_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift.gripper.mesh_2",
+        "label": "Gripper_Body_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift.gripper.finger_left.mesh_0",
+        "label": "Finger_Left_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift.gripper.finger_left.mesh_1",
+        "label": "Finger_Left_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift.gripper.finger_right.mesh_0",
+        "label": "Finger_Right_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.lift.gripper.finger_right.mesh_1",
+        "label": "Finger_Right_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.motor.mesh_0",
+        "label": "Motor_Bridge_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.motor.mesh_1",
+        "label": "Motor_Bridge_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.motor.mesh_0",
+        "label": "Motor_Carriage_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.motor.mesh_1",
+        "label": "Motor_Carriage_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.motor_lift.mesh_0",
+        "label": "Motor_Lift_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.bridge.carriage.motor_lift.mesh_1",
+        "label": "Motor_Lift_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_0.mesh_0",
+        "label": "Cable_Link_01_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_1.mesh_0",
+        "label": "Cable_Link_02_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_2.mesh_0",
+        "label": "Cable_Link_03_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_3.mesh_0",
+        "label": "Cable_Link_04_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_4.mesh_0",
+        "label": "Cable_Link_05_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_5.mesh_0",
+        "label": "Cable_Link_06_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_6.mesh_0",
+        "label": "Cable_Link_07_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_7.mesh_0",
+        "label": "Cable_Link_08_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_8.mesh_0",
+        "label": "Cable_Link_09_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_9.mesh_0",
+        "label": "Cable_Link_10_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_10.mesh_0",
+        "label": "Cable_Link_11_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_11.mesh_0",
+        "label": "Cable_Link_12_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_12.mesh_0",
+        "label": "Cable_Link_13_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_13.mesh_0",
+        "label": "Cable_Link_14_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_14.mesh_0",
+        "label": "Cable_Link_15_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_15.mesh_0",
+        "label": "Cable_Link_16_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_16.mesh_0",
+        "label": "Cable_Link_17_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_17.mesh_0",
+        "label": "Cable_Link_18_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_18.mesh_0",
+        "label": "Cable_Link_19_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_19.mesh_0",
+        "label": "Cable_Link_20_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_20.mesh_0",
+        "label": "Cable_Link_21_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_21.mesh_0",
+        "label": "Cable_Link_22_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_22.mesh_0",
+        "label": "Cable_Link_23_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_23.mesh_0",
+        "label": "Cable_Link_24_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_24.mesh_0",
+        "label": "Cable_Link_25_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_25.mesh_0",
+        "label": "Cable_Link_26_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_26.mesh_0",
+        "label": "Cable_Link_27_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_27.mesh_0",
+        "label": "Cable_Link_28_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_28.mesh_0",
+        "label": "Cable_Link_29_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_29.mesh_0",
+        "label": "Cable_Link_30_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_30.mesh_0",
+        "label": "Cable_Link_31_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.cable_chain.link_31.mesh_0",
+        "label": "Cable_Link_32_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.sensors.mesh_0",
+        "label": "Limit_Sensors_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.sensors.mesh_1",
+        "label": "Limit_Sensors_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.light.mesh_0",
+        "label": "Safety_Light_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.light.mesh_1",
+        "label": "Safety_Light_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.base.light.mesh_2",
+        "label": "Safety_Light_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.conveyor.mesh_0",
+        "label": "Source_Conveyor_white",
+        "visible": true
+      },
+      {
+        "id": "gantry.conveyor.mesh_1",
+        "label": "Source_Conveyor_light_grey",
+        "visible": true
+      },
+      {
+        "id": "gantry.conveyor.mesh_2",
+        "label": "Source_Conveyor_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.conveyor.mesh_3",
+        "label": "Source_Conveyor_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.conveyor.table.mesh_0",
+        "label": "Source_Lift_Table_light_grey_light",
+        "visible": true
+      },
+      {
+        "id": "gantry.box.mesh_0",
+        "label": "Destination_Box_white_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.box.mesh_1",
+        "label": "Destination_Box_orange",
+        "visible": true
+      },
+      {
+        "id": "gantry.box.mesh_2",
+        "label": "Destination_Box_light_grey",
+        "visible": true
+      },
+      {
+        "id": "gantry.box.mesh_3",
+        "label": "Destination_Box_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.box.table.mesh_0",
+        "label": "Receiving_Lift_Table_light_grey_light",
+        "visible": true
+      },
+      {
+        "id": "gantry.return_track.mesh_0",
+        "label": "Return_Shuttle_Track_light_grey_dark",
+        "visible": true
+      },
+      {
+        "id": "gantry.return_track.mesh_1",
+        "label": "Return_Shuttle_Track_light_grey",
+        "visible": true
+      },
+      {
+        "id": "gantry.return_track.shuttle.mesh_0",
+        "label": "Return_Shuttle_electric_blue",
+        "visible": true
+      },
+      {
+        "id": "gantry.workpiece.mesh_0",
+        "label": "Demo_Workpiece_white_light",
+        "visible": true
+      },
+      {
+        "id": "gantry.workpiece.mesh_1",
+        "label": "Demo_Workpiece_electric_blue",
+        "visible": true
+      },
+      {
+        "id": "gantry.workpiece.mesh_2",
+        "label": "Demo_Workpiece_soot_black",
+        "visible": true
+      },
+      {
+        "id": "gantry.workpiece.mesh_3",
+        "label": "Demo_Workpiece_light_grey_dark",
+        "visible": true
+      }
+    ],
+    "views": [
+      "hero",
+      "front",
+      "side",
+      "top"
+    ]
+  },
+  "errors": []
+}

@@ -1,0 +1,4 @@
+﻿import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {upsertAssetRow} from './.agents/skills/design-kit/scripts/assets-check.mjs';
+for(const size of ['desktop','portrait']){const projectPath=`assets/gantry-poster-${size}.png`;upsertAssetRow(process.cwd(),{id:`asset_gantry_poster_${size}`,projectPath,sha256:createHash('sha256').update(readFileSync(projectPath)).digest('hex'),kind:'original-code',source:'make-poster.mjs rendering the authored assets/three/scene.js through scene3d.exportPNG',creator:'Authored project geometry',usageBasis:'Raster snapshot of the original procedural model, used only while WebGL prepares its first frame.',review:'clear-record',brief:'Show the exact authored gantry at t=0 with no UI or lettering; identical framing to the live canvas.',textPolicy:'none',generator:'Three.js WebGLRenderer',attributionRequired:false})}

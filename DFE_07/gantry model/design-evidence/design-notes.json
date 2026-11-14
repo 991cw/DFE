@@ -1,0 +1,58 @@
+{
+  "schema": "design-notes/1",
+  "notes": [
+    {
+      "anchor": {
+        "file": "index.html",
+        "selector": "#machine"
+      },
+      "basis": "plan",
+      "cites": [
+        {
+          "kind": "plan",
+          "ref": "protected"
+        }
+      ],
+      "confidence": "high",
+      "createdAt": "2026-11-14T15:57:16Z",
+      "decision": "Keep gantry axes as rigid nodes",
+      "did": "Nested the carriage and lifting mast under their supporting axes.",
+      "id": "note_rigid_axes",
+      "instead": "A single merged animated gantry mesh.",
+      "n": 1,
+      "schema": "design-notes/1",
+      "scope": "section",
+      "status": "open",
+      "traded": "More exported nodes and animation tracks.",
+      "when": "build",
+      "why": "The factory simulator must control each axis independently."
+    },
+    {
+      "anchor": {
+        "file": "index.html",
+        "selector": "#machine"
+      },
+      "basis": "plan",
+      "cites": [
+        {
+          "kind": "plan",
+          "ref": "sections"
+        }
+      ],
+      "confidence": "high",
+      "createdAt": "2026-11-14T15:57:23Z",
+      "decision": "Recirculate the demonstration workpiece below the stations",
+      "did": "Added low station lift tables and a return shuttle.",
+      "id": "note_return_shuttle",
+      "instead": "Resetting the demonstration part instantly after release.",
+      "n": 2,
+      "schema": "design-notes/1",
+      "scope": "section",
+      "status": "open",
+      "traded": "A slim transfer track occupies part of the floor.",
+      "when": "build",
+      "why": "The gantry cycle needs the workpiece back at pickup without a loop-boundary teleport."
+    }
+  ],
+  "refusals": []
+}

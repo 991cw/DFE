@@ -1,0 +1,2 @@
+﻿import {readFileSync,writeFileSync}from'node:fs';
+let s=readFileSync('assets/three/scene.js','utf8');const before="box(link,.105,.045,.245,[0,0,0],'soot black');chainLinks.push(link)";if(!s.includes(before))throw Error('Expected cable link definition is missing');s=s.replace(before,"box(link,.105,.045,.245,[0,0,0],'soot black');cyl(link,.028,.105,[0,0,.1225],'soot black',[0,0,Math.PI/2]);chainLinks.push(link)");writeFileSync('assets/three/scene.js',s);
