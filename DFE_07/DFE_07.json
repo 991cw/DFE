@@ -517,15 +517,9 @@
           "unit": 0.5
         }
       ],
-      "position": [2000, 0, 0],
+      "position": [0, 0, 0],
       "rotation": [0, 0, 0],
-      "placementRelTo": "building",
-      "properties": {
-        "mass":  0,
-          "restitution":  0.3,
-         "friction":  0.0,
-         "MotionType":  "ANIMATED"
-      }
+      "placementRelTo": "building"
     },
     {
       "id":  "Grid",
