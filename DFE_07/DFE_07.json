@@ -25,6 +25,7 @@
     "PP.Finger1",
     "PP.Finger2",
     "B2",
+    "G2",
     "Grid",
     "Box"
   ],
@@ -505,6 +506,25 @@
             }     
           }   
         } 
+      }
+    },
+    {
+      "id":  "G2",
+      "type": "https://w3id.org/ontoeng/factory#Robot",
+      "representations": [
+        {
+          "file": "GantryXYZ.glb",
+          "unit": 1
+        }
+      ],
+      "position": [0, 0, 0],
+      "rotation": [0, 0, 0],
+      "placementRelTo": "building",
+      "properties": {
+        "mass":  0,
+          "restitution":  0.3,
+         "friction":  0.0,
+         "MotionType":  "ANIMATED"
       }
     },
     {
