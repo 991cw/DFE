@@ -513,7 +513,7 @@
       "type": "https://w3id.org/ontoeng/factory#Robot",
       "representations": [
         {
-          "file": "GantryXYZ.glb",
+          "file": "Gantry_new.glb",
           "unit": 1
         }
       ],
