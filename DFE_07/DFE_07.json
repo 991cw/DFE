@@ -514,10 +514,10 @@
       "representations": [
         {
           "file": "Gantry_New.glb",
-          "unit": 1
+          "unit": 0.5
         }
       ],
-      "position": [0, 0, 0],
+      "position": [2000, 0, 0],
       "rotation": [0, 0, 0],
       "placementRelTo": "building",
       "properties": {
