@@ -32,6 +32,7 @@
     "G1.FingerLeft",
     "G1.FingerRight",
     "B3",
+    "small_box",
     "Grid",
     "Box"
   ],
@@ -285,7 +286,7 @@
           "unit": 1
         }
       ],
-      "position": [-870, 0, 0],
+      "position": [72, 0, 700],
       "rotation": [0, 0, 0],
       "placementRelTo": "building",
       "statechart": {
@@ -300,7 +301,7 @@
                                        {
                  "action":  "moveTo",
                  "target":  "PP.FloatingZ",
-                 "position":  [-120, 80, 0] 
+                 "position":  [80, 80, 0] 
               },
                                        {
                  "action":  "moveTo",
@@ -330,7 +331,7 @@
                      {
                  "action":  "moveTo",
                  "target":  "PP.FloatingZ",
-                 "position":  [-120, 80, 0] 
+                 "position":  [80, 80, 0] 
               },
                      {
                  "action":  "moveTo",
@@ -359,7 +360,7 @@
                                        {
                  "action":  "moveTo",
                  "target":  "PP.FloatingZ",
-                 "position":  [-120, 80, -200] 
+                 "position":  [80, 80, -200] 
               },
                         {
                  "action":  "moveTo",
@@ -692,7 +693,7 @@
           "unit": 1
         }
       ],
-      "position": [300, 0, 0],
+      "position": [200, 0, 0],
       "rotation": [0, 3.14159, 0],
       "placementRelTo": "building",
       "properties": {
@@ -740,6 +741,25 @@
       }
     },
     {
+      "id":  "small_box",
+      "type": "https://w3id.org/ontoeng/factory#Artifact",
+      "representations": [
+        {
+          "file": "box_small.glb",
+          "unit": 1
+        }
+      ],
+      "position": [150, 230, 950],
+      "rotation": [0, 0, 0],
+      "placementRelTo": "building",
+      "properties": {
+        "mass":  0,
+          "restitution":  0.3,
+         "friction":  0.0,
+         "MotionType":  "ANIMATED"
+      }
+    },
+    {
       "id":  "Grid",
       "type": "https://w3id.org/ontoeng/factory#Artifact",
       "representations": [
@@ -767,7 +787,7 @@
           "unit": 1
         }
       ],
-      "position": [2200, 0, 3000],
+      "position": [2300, 0, 3000],
       "rotation": [0, 0, 0],
       "placementRelTo": "building",
       "properties": {
